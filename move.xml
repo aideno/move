@@ -20,8 +20,8 @@
                   <block type="logic_compare" id="26" inline="true">
                     <field name="OP">LT</field>
                     <value name="A">
-                      <block type="sensor_spectrometer" id="33">
-                        <field name="LIGHT">RED</field>
+                      <block type="sensor_object" id="125">
+                        <field name="OBJECT">LEFTFRONT</field>
                       </block>
                     </value>
                     <value name="B">
@@ -32,21 +32,34 @@
                   </block>
                 </value>
                 <statement name="DO0">
-                  <block type="led_select" id="6" inline="true">
-                    <field name="ACTION">FLASH</field>
-                    <value name="LED">
-                      <block type="math_number" id="7">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
+                  <block type="movement_right" id="135">
                     <next>
-                      <block type="led_select" id="8" inline="true">
-                        <field name="ACTION">FLASH</field>
-                        <value name="LED">
-                          <block type="math_number" id="9">
-                            <field name="NUM">5</field>
+                      <block type="robot_delay" id="136" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="137">
+                            <field name="NUM">100</field>
                           </block>
                         </value>
+                        <next>
+                          <block type="led_select" id="6" inline="true">
+                            <field name="ACTION">FLASH</field>
+                            <value name="LED">
+                              <block type="math_number" id="7">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="led_select" id="8" inline="true">
+                                <field name="ACTION">FLASH</field>
+                                <value name="LED">
+                                  <block type="math_number" id="9">
+                                    <field name="NUM">5</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
                       </block>
                     </next>
                   </block>
