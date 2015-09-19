@@ -1,37 +1,56 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_repeat" id="108" inline="true" x="61" y="4">
+  <block type="controls_repeat" id="1" inline="true" x="61" y="4">
     <value name="TIMES">
-      <block type="math_number" id="136">
-        <field name="NUM">10</field>
+      <block type="math_number" id="2">
+        <field name="NUM">100</field>
       </block>
     </value>
     <statement name="DO">
-      <block type="movement_forward" id="11">
+      <block type="movement_forward" id="3">
         <next>
-          <block type="robot_delay" id="20" inline="true">
+          <block type="robot_delay" id="4" inline="true">
             <value name="DELAY">
-              <block type="math_number" id="34">
-                <field name="NUM">1000</field>
+              <block type="math_number" id="5">
+                <field name="NUM">100</field>
               </block>
             </value>
             <next>
-              <block type="led_select" id="67" inline="true">
-                <field name="ACTION">FLASH</field>
-                <value name="LED">
-                  <block type="math_number" id="74">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <next>
-                  <block type="led_select" id="75" inline="true">
-                    <field name="ACTION">FLASH</field>
-                    <value name="LED">
-                      <block type="math_number" id="76">
-                        <field name="NUM">5</field>
+              <block type="controls_if" id="19" inline="false">
+                <value name="IF0">
+                  <block type="logic_compare" id="26" inline="true">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="sensor_spectrometer" id="33">
+                        <field name="LIGHT">BLUE</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="40">
+                        <field name="NUM">80</field>
                       </block>
                     </value>
                   </block>
-                </next>
+                </value>
+                <statement name="DO0">
+                  <block type="led_select" id="6" inline="true">
+                    <field name="ACTION">FLASH</field>
+                    <value name="LED">
+                      <block type="math_number" id="7">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="led_select" id="8" inline="true">
+                        <field name="ACTION">FLASH</field>
+                        <value name="LED">
+                          <block type="math_number" id="9">
+                            <field name="NUM">5</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
               </block>
             </next>
           </block>
@@ -39,7 +58,7 @@
       </block>
     </statement>
     <next>
-      <block type="movement_stop" id="44"></block>
+      <block type="movement_stop" id="12"></block>
     </next>
   </block>
 </xml>
